@@ -17,11 +17,11 @@ def main():
 
     river_image_paths = sorted(glob.glob(os.path.join(args.root, "img", "*RI*.jpg")))
     river_sketch_paths = sorted(glob.glob((os.path.join(args.root, "label_img", "*RI*.png"))))
-    print(f"Found {river_image_paths} river images, {river_sketch_paths} river sketches")
+    print(f"Found {len(river_image_paths)} river images, {len(river_sketch_paths)} river sketches")
 
     road_image_paths = sorted(glob.glob(os.path.join(args.root, "img", "*RO*.jpg")))
     road_sketch_paths = sorted(glob.glob((os.path.join(args.root, "label_img", "*RO*.png"))))
-    print(f"Found {road_image_paths} river images, {road_sketch_paths} river sketches")
+    print(f"Found {len(road_image_paths)} river images, {len(road_sketch_paths)} river sketches")
 
     print("Do train test split ...")
     train_river_image_paths, val_river_image_paths = train_test_split(

@@ -37,7 +37,7 @@ conda env create -f environment.yml
 
 2. **前處理**
    ```bash
-   python preprocess/aicup_preprocess.py --root ./Trainig_dataset \
+   python preprocess/aicup_preprocess.py --root dataset/Trainig_dataset \
                                          --save_dir dataset \
                                          --test_size 0.1                    
    ```

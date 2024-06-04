@@ -27,6 +27,7 @@ mpiexec -n $NUM_GPUS --allow-run-as-root python ./image_train.py $MODEL_FLAGS $W
 # python ./image_train.py $MODEL_FLAGS  $TRAIN_FLAGS $SAMPLE_FLAGS $DIFFUSION_FLAGS  $DATASET_FLAGS
 
 task=$1
+export CUDA_LAUNCH_BLOCKING=1
 export LOGDIR=coco-edge/coco-64-stage2-decoder_${task}/
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 NUM_GPUS=1
