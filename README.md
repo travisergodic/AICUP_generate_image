@@ -18,7 +18,7 @@
 1. 操作系統: Linux-64
 2. 硬體: 
    + CPU: 12 核心 Intel(R) Xeon(R) CPU @ 2.20GHz
-   + GPU: NVIDIA L4 (23 GB)
+   + GPU: Nvidia L4 (23 GB)
 3. Python 版本: 3.7.11
 
 ## 環境安裝
@@ -90,7 +90,7 @@ conda env create -f environment.yml
     python inference.py --encoder_ckpt path/to/river/sketch/to/image/encoder \
                         --decoder_ckpt path/to/river/sketch/to/image/decoder \
                         --sr_model_path path/to/river/upsample/model \
-                        --image dataset/Private_testing_dataset/label_img/*RO*.png \
+                        --image "dataset/Private_testing_dataset/label_img/PRI_RO*.png" \
                         --save_dir ./generate_images
                         --num_samples 8
     ```
@@ -100,7 +100,7 @@ conda env create -f environment.yml
     python inference.py --encoder_ckpt path/to/road/sketch/to/image/encoder \
                         --decoder_ckpt path/to/road/sketch/to/image/decoder \
                         --sr_model_path path/to/road/upsample/model \
-                        --image dataset/Private_testing_dataset/label_img/*RI*.png \
+                        --image "dataset/Private_testing_dataset/label_img/PRI_RI*.png" \
                         --save_dir ./generate_images
                         --num_samples 8
     ```
