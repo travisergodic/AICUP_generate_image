@@ -1,19 +1,20 @@
 import torch
 import torch.nn as nn
-from torchvision.models import VGG16_Weights, ResNet34_Weights, vgg16, resnet34
+
+from torchvision.models import  vgg16, resnet34
 
 from .inception import fid_inception_v3
 
 
 def build_vgg16():
-    model = vgg16(VGG16_Weights.IMAGENET1K_V1)
+    model = vgg16(pretrained=True)
     model.classifier = nn.Identity()
     model.avgpool = nn.AdaptiveAvgPool2d((1, 1))
     return model
 
 
 def build_resnet34():
-    model = resnet34(ResNet34_Weights.IMAGENET1K_V1)
+    model = resnet34(pretrained=True)
     model.fc = nn.Identity()
     model.avgpool = nn.AdaptiveAvgPool2d((1, 1))
     return model
